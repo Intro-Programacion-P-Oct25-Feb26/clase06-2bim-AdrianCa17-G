@@ -25,6 +25,11 @@ public class Ejemplo08 {
             double resultado2 = (double)resultado;
             System.out.printf("Resultado %.2f", resultado2);
         }
+        
+        /*Est es la excepcion global, este identifica todo tipo de errores
+        posibles que presente el programa, seria como el padre de las
+        excepciones de errores*/
+        
         catch(Exception e){
             
             System.out.printf(" Lo sentimos hay un error de tipo %s\n", e);

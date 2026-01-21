@@ -28,6 +28,12 @@ public class Ejemplo051 {
 
                 System.out.printf("Resultado %d\n", resultado);
                 bandera = false;
+                
+                /* Ciclo repetitivo que permite ingresar valores solamente enteros
+                mientras estos valores no sean respetados como enteros va a mandar
+                errores de excepcion y se volvera a pedir al usuario que nuevamente
+                ingrese los valores del tipo correcto*/
+                
             } catch (InputMismatchException inputMismatchException) {
 
                 System.out.printf("Existe un error de tipo %s\n",
