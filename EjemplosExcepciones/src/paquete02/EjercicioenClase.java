@@ -5,6 +5,7 @@
 package paquete02;
 
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 /**
  *
@@ -21,12 +22,37 @@ public class EjercicioenClase {
     }
 
     public static int ingresarNumero() {
-        Scanner entrada = new Scanner(System.in);
-        int numero;
-        System.out.println("Ingrese el numero de tipo entero");
-        numero = entrada.nextInt();
-        return numero;
 
+        Scanner entrada = new Scanner(System.in);
+
+        boolean bandera = true;
+        int numero = 0;
+
+        while (bandera) {
+            try {
+                System.out.println("Ingrese el numero de tipo entero");
+                numero = entrada.nextInt();
+
+                if (numero % 2 == 0 && numero >= 0) {
+
+                    System.out.println("Numero es par y mayor a 0 por lo tanto sera sumado\n");
+                    bandera = false;
+
+                } else {
+
+                    if (numero % 2 == 1) {
+                        throw new Exception("Numero es impar por lo tanto no sera sumado, ingrese nuevamente\n");
+                    } else if (numero < 0) {
+                        throw new Exception("Numero es menor a 0 por lo tanto no sera sumado, ingrese nuevamente\n");
+                    }
+                }
+            }catch (Exception e) {
+            System.out.printf("Ocurrió una excepción %s\n", e);
+        }
+
+            
+        }
+        return numero;
     }
 
     public static int sumaNumeros(int numero1, int numero2) {
